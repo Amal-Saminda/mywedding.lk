@@ -4,6 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Mail , Phone, MapPin, ArrowRight } from "lucide-react";
+import {FaFacebook} from "react-icons/fa";
 
 const QUICK_LINKS = [
   { label: "Search Profiles", href: "/search" },
@@ -20,7 +21,7 @@ const MEMBER_LINKS = [
 ];
 
 const SOCIALS = [
-  { icon: Mail, href: "https://facebook.com", label: "Facebook" },
+  { icon: FaFacebook, href: "https://facebook.com", label: "Facebook" },
   { icon: Mail, href: "https://instagram.com", label: "Instagram" },
   { icon: Mail, href: "https://twitter.com", label: "X" },
   { icon: Mail, href: "https://youtube.com", label: "YouTube" },
@@ -38,7 +39,7 @@ export default function Footer() {
   }
 
   return (
-    <footer className="bg-plum text-black">
+    <footer className="bg-rose-300 text-black">
       {/* Newsletter strip */}
       <div className="border-b border-white/10">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-6 px-4 py-10 sm:px-6 lg:flex-row lg:px-8">

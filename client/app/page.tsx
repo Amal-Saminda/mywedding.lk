@@ -3,6 +3,7 @@ import Footer from "@/components/layout/Footer";
 import Hero from "@/components/home/Hero";
 import Reviews from "@/components/home/Reviews";
 import ProfileGrid from "@/components/profiles/ProfileGrid";
+import TopProfilesSection from "@/components/profiles/TopProfilesSection";
 import { topProfiles, recentPosts } from "@/lib/sample-profiles";
 
 export default function HomePage() {
@@ -11,7 +12,7 @@ export default function HomePage() {
       <Navbar />
       <main>
         <Hero />
-        <ProfileGrid title="Top Profile" profiles={topProfiles} />
+        <TopProfilesSection profiles={topProfiles} />
         <ProfileGrid title="Recent Posts" profiles={recentPosts} totalPages={3} />
         <Reviews />
       </main>

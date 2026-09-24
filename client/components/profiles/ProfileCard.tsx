@@ -1,5 +1,5 @@
 import { Briefcase, MapPin, Play } from "lucide-react";
-import Avatar from "../ui/Avatar";
+import Avatar from "@/shared/ui/Avatar";
 
 export type Profile = {
   id: string;
@@ -40,7 +40,7 @@ export default function ProfileCard({ profile }: { profile: Profile }) {
         </a>
         <button
           type="button"
-          className="group flex flex-1 items-center justify-center gap-1.5 rounded-pill bg-rose-plum px-3 py-2 text-xs font-semibold text-white transition-opacity hover:opacity-90"
+          className="group flex flex-1 items-center justify-center gap-1.5 rounded-pill bg-rose-plum px-3 py-2 text-xs font-semibold text-rose-600 transition-colors hover:bg-rose-100 hover:opacity-90"
         >
           Send Invitation
           <Play size={10} fill="currentColor" className="transition-transform group-hover:translate-x-0.5" />

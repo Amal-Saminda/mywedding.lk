@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Search, User, MapPin, Heart } from "lucide-react";
 
 const fieldClass =
-  "flex flex-1 items-center gap-2 px-4 py-3 text-sm text-ink-soft focus-within:text-ink bg-white";
+  "flex flex-1 items-center gap-1 px-4 py-3 text-sm text-ink-soft focus-within:text-ink";
 
 export default function SearchBar() {
   const [lookingFor, setLookingFor] = useState("");
@@ -13,11 +13,11 @@ export default function SearchBar() {
 
   return (
     <form
-      className="flex flex-col divide-y divide-rose-100 rounded-card bg-surface shadow-lift sm:flex-row sm:divide-x sm:divide-y-0 sm:rounded-pill"
+      className="flex flex-col divide-y divide-rose-100 rounded-card bg-surface shadow-lift sm:flex-row sm:divide-x sm:divide-y-0 sm:rounded-4xl bg-white m-12"
       onSubmit={(e) => e.preventDefault()}
     >
       <label className={fieldClass}>
-        <User size={16} className="shrink-0" />
+        <User color="red" fill="red" size={16} className="shrink-0" />
         <select
           value={lookingFor}
           onChange={(e) => setLookingFor(e.target.value)}
@@ -30,7 +30,7 @@ export default function SearchBar() {
       </label>
 
       <label className={fieldClass}>
-        <MapPin size={16} className="shrink-0" />
+        <MapPin color="red" fill="red" size={16} className="shrink-0" />
         <select
           value={location}
           onChange={(e) => setLocation(e.target.value)}
@@ -45,23 +45,25 @@ export default function SearchBar() {
       </label>
 
       <label className={fieldClass}>
-        <Heart size={16} className="shrink-0" />
+        <Heart color="red" fill="red" size={16} className="shrink-0" />
         <select
           value={age}
           onChange={(e) => setAge(e.target.value)}
           className="w-full bg-transparent outline-none"
         >
           <option value="">Age</option>
+          <option value="18-20">18-20</option>
           <option value="20-25">20–25</option>
           <option value="26-30">26–30</option>
           <option value="31-35">31–35</option>
-          <option value="36+">36+</option>
+          <option value="36-45">36-45</option>
+          <option value="45+">45+</option>
         </select>
       </label>
 
       <button
         type="submit"
-        className="flex items-center justify-center gap-2 bg-rose-plum px-8 py-3 text-sm font-semibold text-white sm:rounded-r-pill"
+        className="flex items-center justify-center gap-2 bg-white-plum px-8 py-3 text-sm font-semibold text-white sm:rounded-r-pill bg-rose-600 rounded-4xl"
       >
         <Search size={16} />
         Search

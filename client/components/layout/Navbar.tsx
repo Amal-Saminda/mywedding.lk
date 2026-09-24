@@ -4,39 +4,16 @@ import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { ChevronDown, MessageCircle, Bell, Menu, X } from "lucide-react";
+import { PROFESSION_GROUPS } from "@/shared/constants/professions";
 
-type ProfessionGroup = {
-  label: string;
-  items: string[];
+type NavbarProps = {
+  unreadNotifications?: number;
 };
-
-const PROFESSION_GROUPS: ProfessionGroup[] = [
-  {
-    label: "Medical & Healthcare",
-    items: ["Doctor", "Nurse", "Pharmacist", "Dentist"],
-  },
-  {
-    label: "Engineering & IT",
-    items: ["Software Engineer", "Civil Engineer", "Electrical Engineer", "IT Support"],
-  },
-  {
-    label: "Education",
-    items: ["Teacher", "Lecturer", "Principal"],
-  },
-  {
-    label: "Business & Government",
-    items: ["Business Owner", "Government Officer", "Accountant", "Banker"],
-  },
-];
 
 const NAV_LINKS = [
   { label: "Contact Us", href: "/contact" },
   { label: "About", href: "/about" },
 ];
-
-type NavbarProps = {
-  unreadNotifications?: number;
-};
 
 export default function Navbar({ unreadNotifications = 0 }: NavbarProps) {
   const [categoryOpen, setCategoryOpen] = useState(false);
@@ -87,8 +64,8 @@ export default function Navbar({ unreadNotifications = 0 }: NavbarProps) {
             </button>
 
             {categoryOpen && (
-              <div className="absolute left-1/2 top-full mt-3 w-[560px] -translate-x-1/2 rounded-card border border-rose-100 bg-surface p-6 shadow-lift">
-                <p className="mb-4 text-xs font-semibold uppercase tracking-wide text-rose-500">
+              <div className="absolute left-1/2 top-full mt-3 w-[560px] -translate-x-1/2 rounded-card border border-rose-100 bg-surface p-6 shadow-lift bg-white">
+                <p className="mb-4 text-xs font-semibold uppercase tracking-wide text-rose-500"> 
                   Search by profession
                 </p>
                 <div className="grid grid-cols-2 gap-x-8 gap-y-5">
